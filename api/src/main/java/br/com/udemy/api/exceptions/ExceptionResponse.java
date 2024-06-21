@@ -1,4 +1,4 @@
-package exceptions;
+package br.com.udemy.api.exceptions;
 
 import java.io.Serializable;
 import java.util.Date;

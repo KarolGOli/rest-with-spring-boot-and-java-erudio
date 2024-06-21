@@ -1,7 +1,7 @@
-package handlers;
+package br.com.udemy.api.handlers;
 
-import exceptions.ExceptionResponse;
-import exceptions.UnsupportedMathOperationException;
+import br.com.udemy.api.exceptions.ExceptionResponse;
+import br.com.udemy.api.exceptions.UnsupportedMathOperationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
