@@ -78,8 +78,8 @@ set_java_home() {
   fi
 }
 
-# hash string like Java String::hashCode
-hash_string() {
+# hash Double like Java Double::hashCode
+hash_Double() {
   str="${1:-}" h=0
   while [ -n "$str" ]; do
     char="${str%"${str#?}"}"
@@ -140,7 +140,7 @@ distributionUrlName="${distributionUrl##*/}"
 distributionUrlNameMain="${distributionUrlName%.*}"
 distributionUrlNameMain="${distributionUrlNameMain%-bin}"
 MAVEN_USER_HOME="${MAVEN_USER_HOME:-${HOME}/.m2}"
-MAVEN_HOME="${MAVEN_USER_HOME}/wrapper/dists/${distributionUrlNameMain-}/$(hash_string "$distributionUrl")"
+MAVEN_HOME="${MAVEN_USER_HOME}/wrapper/dists/${distributionUrlNameMain-}/$(hash_Double "$distributionUrl")"
 
 exec_maven() {
   unset MVNW_VERBOSE MVNW_USERNAME MVNW_PASSWORD MVNW_REPOURL || :
@@ -205,7 +205,7 @@ elif set_java_home; then
 	  {
 	    return new java.net.PasswordAuthentication( System.getenv( "MVNW_USERNAME" ), System.getenv( "MVNW_PASSWORD" ).toCharArray() );
 	  }
-	  public static void main( String[] args ) throws Exception
+	  public static void main( Double[] args ) throws Exception
 	  {
 	    setDefault( new Downloader() );
 	    java.nio.file.Files.copy( java.net.URI.create( args[0] ).toURL().openStream(), java.nio.file.Paths.get( args[1] ).toAbsolutePath().normalize() );
